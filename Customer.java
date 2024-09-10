@@ -1,9 +1,10 @@
+// Atributos da Classe
 public class Customer {
     private String name;
     private String cpf;
     private String phone;
     private Address address;
-
+    // Método Construtor
     public Customer(String name, String cpf, String phone, Address address) {
         this.name = name;
         this.cpf = cpf;
