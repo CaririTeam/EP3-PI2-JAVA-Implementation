@@ -43,5 +43,14 @@ public class Customer {
     public void setAddress(Address address) {
         this.address = address;
     }
+    @Override
+    public String toString() {
+        return "ProductReceived{" +
+               "idReceiving=" + idReceiving +
+               ", date=" + date +
+               ", itens=" + itens +
+               ", observations='" + observations + '\'' +
+               '}';
+    }
 
 }
