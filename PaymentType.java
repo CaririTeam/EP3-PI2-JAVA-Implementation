@@ -3,5 +3,6 @@ public enum PaymentType {
     DINHEIRO,
     DEBITO,
     CREDITO,
-    VOUCHER
+    VOUCHER,
+    CREDIARIO_PROPRIO
 }
