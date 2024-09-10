@@ -81,12 +81,17 @@ public class Address {
 
     
     public String getPostalCode(){
-        return postalCode;
+        String str = "CEP: " + postalCode.substring(0, 5) + "-" + postalCode.substring(5,8);
+        return str;
      }
 
     
     public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
+        if ((postalCode.length()!= 8) || (!(postalCode.matches("\\d+")))){
+            System.out.println("CEP invalido!!!");
+        } else {
+            this.postalCode = postalCode;
+        }
         
     }
 
