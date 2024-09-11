@@ -16,6 +16,7 @@ public class Product {
     private String shelf;
     private String unitMeasurement;
     private List<Supplier> suppliers;
+    private int currentStock;
 
     public Product(int idProduct, String name, String productCategory, double cost, double price, 
                    String manufacturer, Date manufacturingDate, Date expirationDate, double minimunStock, 
@@ -34,6 +35,7 @@ public class Product {
         this.shelf = shelf;
         this.unitMeasurement = unitMeasurement;
         this.suppliers = suppliers;
+        this.currentStock = currentStock;
     }
 
     public int getIdProduct() {
@@ -146,6 +148,14 @@ public class Product {
 
     public void setSuppliers(List<Supplier> suppliers) {
         this.suppliers = suppliers;
+    }
+
+    public int getCurrentStock() {
+        return currentStock;
+    }
+
+    public void setCurrentStock(int currentStock) {
+        this.currentStock = currentStock;
     }
 
     @Override
