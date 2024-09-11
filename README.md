@@ -79,3 +79,11 @@ O projeto é dividido em várias classes para organizar os diferentes aspectos d
         // Aqui você pode instanciar objetos e testar o sistema
     }
   }
+
+## Documentação
+
+A documentação completa do Sistema de Estoque para Supermercado de Bairro está disponível online, contendo detalhes sobre a implementação das classes, justificativas das decisões técnicas, diagramas e explicações dos processos e funcionalidades do sistema. Acesse a documentação por meio do seguinte link:
+
+[Documentação - Classes e Processos de Software em Java para Sistema de Estoque de Supermercado](https://docs.google.com/document/d/1Y3PBHt7DCT_DllvugdKgQbrJz6kDuKau9bvBdxu2QDw/edit?usp=sharing)
+
+Nela, você encontrará informações detalhadas sobre cada classe do projeto, os processos de gestão de produtos, vendas, clientes e fornecedores, além de considerações sobre modularidade, tratamento de exceções e os próximos passos para melhorias do sistema.
