@@ -7,16 +7,16 @@ public class ExchangeAndReturn {
     private List<ProductToOperate> itens;
     private Date date;
     private String observations;
-    private Voucher voucher;
+    private Voucher voucher = 0;
 
     public ExchangeAndReturn(int idExchangeAndReturn, int idSale, List<ProductToOperate> itens, 
-                             Date date, String observations, Voucher voucher) {
+                             Date date, String observations) {
         this.idExchangeAndReturn = idExchangeAndReturn;
         this.idSale = idSale;
         this.itens = itens;
         this.date = date;
         this.observations = observations;
-        this.voucher = voucher;
+        this.voucher = 0;
     }
 
     public int getIdExchangeAndReturn() {

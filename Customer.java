@@ -29,11 +29,18 @@ public class Customer {
     }
 
     public String getPhone() {
-        return phone;
+        
+        String str = "Telefone: " + "(" + phone.substring(0,2)+")" + phone.substring(2, 7)
+                + "-" + phone.substring(6,11);
+        return str;
     }
 
     public void setPhone(String phone) {
+        if((phone.length()!= 11)|| !(phone.matches("\\d+"))){
+            System.out.println("Telefone invalido!!!");
+        }else{
         this.phone = phone;
+        }
     }
 
     public Address getAddress() {
