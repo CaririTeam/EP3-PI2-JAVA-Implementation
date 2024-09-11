@@ -10,16 +10,18 @@ public class Product {
     private String manufacturer;
     private Date manufacturingDate;
     private Date expirationDate;
-    private double minimunStock;
-    private double maximunStock;
+    private double minimumStockAlertLevel;  // Estoque mínimo para alertas
+    private double maximunStock;  // Estoque máximo
+    private double currentStock;  // Estoque atual
     private int corridor;
     private String shelf;
     private String unitMeasurement;
     private List<Supplier> suppliers;
 
     public Product(int idProduct, String name, String productCategory, double cost, double price, 
-                   String manufacturer, Date manufacturingDate, Date expirationDate, double minimunStock, 
-                   double maximunStock, int corridor, String shelf, String unitMeasurement,List<Supplier> suppliers) {
+                   String manufacturer, Date manufacturingDate, Date expirationDate, 
+                   double minimumStockAlertLevel, double maximunStock, double currentStock, 
+                   int corridor, String shelf, String unitMeasurement, List<Supplier> suppliers) {
         this.idProduct = idProduct;
         this.name = name;
         this.productCategory = productCategory;
@@ -28,8 +30,9 @@ public class Product {
         this.manufacturer = manufacturer;
         this.manufacturingDate = manufacturingDate;
         this.expirationDate = expirationDate;
-        this.minimunStock = minimunStock;
+        this.minimumStockAlertLevel = minimumStockAlertLevel;
         this.maximunStock = maximunStock;
+        this.currentStock = currentStock;  // Inicializando com o estoque atual
         this.corridor = corridor;
         this.shelf = shelf;
         this.unitMeasurement = unitMeasurement;
@@ -100,12 +103,12 @@ public class Product {
         this.expirationDate = expirationDate;
     }
 
-    public double getMinimunStock() {
-        return minimunStock;
+    public double getMinimumStockAlertLevel() {
+        return minimumStockAlertLevel;
     }
 
-    public void setMinimunStock(double minimunStock) {
-        this.minimunStock = minimunStock;
+    public void setMinimumStockAlertLevel(double minimumStockAlertLevel) {
+        this.minimumStockAlertLevel = minimumStockAlertLevel;
     }
 
     public double getMaximunStock() {
@@ -114,6 +117,14 @@ public class Product {
 
     public void setMaximunStock(double maximunStock) {
         this.maximunStock = maximunStock;
+    }
+
+    public double getCurrentStock() {
+        return currentStock;
+    }
+
+    public void setCurrentStock(double currentStock) {
+        this.currentStock = currentStock;
     }
 
     public int getCorridor() {
@@ -159,8 +170,9 @@ public class Product {
                ", manufacturer='" + manufacturer + '\'' +
                ", manufacturingDate=" + manufacturingDate +
                ", expirationDate=" + expirationDate +
-               ", minimunStock=" + minimunStock +
+               ", minimumStockAlertLevel=" + minimumStockAlertLevel +
                ", maximunStock=" + maximunStock +
+               ", currentStock=" + currentStock +
                ", corridor=" + corridor +
                ", shelf='" + shelf + '\'' +
                ", unitMeasurement='" + unitMeasurement + '\'' +
@@ -168,6 +180,27 @@ public class Product {
                '}';
     }
     
+    // Método para adicionar ao estoque atual
+    public void addToStock(double amount) {
+        double newStock = this.currentStock + amount;
+
+        // Verifica se o novo estoque ultrapassa o limite máximo
+        if (newStock > this.maximunStock) {
+            this.currentStock = this.maximunStock;
+        } else {
+            this.currentStock = newStock;
+        }
+    }
+
+    // Método para repor estoque com base no recebimento de produtos
+    public void replenishStock(ProductReceived productReceived) {
+        // Percorre a lista de produtos recebidos
+        for (ProductToOperate item : productReceived.getItens()) {
+            Product product = item.getProduct();
+            double amountToAdd = item.getAmount();
+
+            // Para adicionar a quantidade ao estoque do produto usa-se aqui o método addToStock criado na linha 183
+            product.addToStock(amountToAdd);
+        }
+    }
 }
-
-
