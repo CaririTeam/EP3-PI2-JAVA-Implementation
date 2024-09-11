@@ -37,9 +37,45 @@ public class SystemMain {
         employees.add(employee);
     }
 
+    // Nova Venda (com verificação de estoque)
     public void newSale(int id, Date date, List<ProductToOperate> itens, Customer customer, Employee employee, PaymentType payment, String observations) {
+        // Verifica se os itens da venda estão disponíveis em estoque
+        for (ProductToOperate item : itens) {
+            Product product = getProductById(item.getProductId());
+            if (product != null) {
+                if (product.getStock() < item.getQuantity()) {
+                    System.out.println("Estoque insuficiente para o produto: " + product.getName());
+                    return;
+                }
+            } else {
+                System.out.println("Produto não encontrado com o ID: " + item.getProductId());
+                return;
+            }
+        }
+
+        // Processa a venda
         Sale sale = new Sale(id, date, itens, customer, employee, payment, observations);
         sales.add(sale);
+
+        // Atualiza o estoque dos produtos vendidos
+        for (ProductToOperate item : itens) {
+            Product product = getProductById(item.getProductId());
+            if (product != null) {
+                product.setStock(product.getStock() - item.getQuantity());
+            }
+        }
+
+        System.out.println("Venda realizada com sucesso.");
+    }
+
+    // Método auxiliar para encontrar um produto pelo ID
+    private Product getProductById(int productId) {
+        for (Product product : products) {
+            if (product.getId() == productId) {
+                return product;
+            }
+        }
+        return null;
     }
 
     public void newPurchaseRequest(int id, Date date, List<ProductToOperate> itens, String observation, Supplier supplier) {
