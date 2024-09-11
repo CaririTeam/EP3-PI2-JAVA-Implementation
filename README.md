@@ -87,3 +87,7 @@ A documentação completa do Sistema de Estoque para Supermercado de Bairro est�
 [Documentação - Classes e Processos de Software em Java para Sistema de Estoque de Supermercado](https://docs.google.com/document/d/1Y3PBHt7DCT_DllvugdKgQbrJz6kDuKau9bvBdxu2QDw/edit?usp=sharing)
 
 Nela, você encontrará informações detalhadas sobre cada classe do projeto, os processos de gestão de produtos, vendas, clientes e fornecedores, além de considerações sobre modularidade, tratamento de exceções e os próximos passos para melhorias do sistema.
+
+## Licença
+
+Este repositório está licenciado sob a licença [MIT](https://choosealicense.com/licenses/mit/).
