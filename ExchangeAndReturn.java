@@ -7,10 +7,10 @@ public class ExchangeAndReturn {
     private List<ProductToOperate> itens;
     private Date date;
     private String observations;
-    private double voucher;
+    private Voucher voucher;
 
     public ExchangeAndReturn(int idExchangeAndReturn, int idSale, List<ProductToOperate> itens, 
-                             Date date, String observations, double voucher) {
+                             Date date, String observations, Voucher voucher) {
         this.idExchangeAndReturn = idExchangeAndReturn;
         this.idSale = idSale;
         this.itens = itens;
@@ -59,11 +59,11 @@ public class ExchangeAndReturn {
         this.observations = observations;
     }
 
-    public double getVoucher() {
+    public Voucher getVoucher() {
         return voucher;
     }
 
-    public void setVoucher(double voucher) {
+    public void setVoucher(Voucher voucher) {
         this.voucher = voucher;
     }
 
