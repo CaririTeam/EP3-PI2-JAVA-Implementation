@@ -27,19 +27,35 @@ public class Supplier {
     }
 
     public String getCnpj() {
-        return cnpj;
+        String str = "CNPJ: " + cnpj.substring(0,2) + "." + cnpj.substring(2,5) + "." 
+                + cnpj.substring(5,8) + "/" + cnpj.substring(8,12) + "-" 
+                + cnpj.substring(12,14);
+        return str;
+        
     }
 
     public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
+       if ((cnpj.length()!= 14) || !(cnpj.matches("\\d+"))){
+            System.out.println("CNPJ invalido!!!");
+            
+        }else{
+            this.cnpj = cnpj;
+        }
     }
 
     public String getPhone() {
-        return phone;
+        
+        String str = "Telefone: " + "(" + phone.substring(0,2)+")" + phone.substring(2, 7)
+                + "-" + phone.substring(6,11);
+        return str;
     }
 
     public void setPhone(String phone) {
+        if((phone.length()!= 11)|| !(phone.matches("\\d+"))){
+            System.out.println("Telefone invalido!!!");
+        }else{
         this.phone = phone;
+        }
     }
 
     public String getEmail() {
