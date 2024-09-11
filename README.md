@@ -2,6 +2,11 @@
 
 Bem-vindo ao repositório do **Sistema de Estoque para Supermercado de Bairro**. Este projeto tem como objetivo ajudar pequenos mercados a gerenciar suas operações de estoque, compras, vendas, fornecedores, clientes e funcionários. Ele foi desenvolvido em **Java** usando princípios da **Programação Orientada a Objetos (POO)** para criar um sistema modular, fácil de entender e manter.
 
+## Autores:
+Francisco Eudo da Silva - mat.: 2023011967
+Gabriel Vasconcelos Andrade da Silva - mat.: 2023009898
+Wagner Fernando Lavandoski Padilha - mat.: 2023012089
+
 ## Funcionalidades Principais
 
 1. **Gerenciamento de Produtos**: 
