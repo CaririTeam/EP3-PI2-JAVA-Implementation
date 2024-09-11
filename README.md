@@ -39,6 +39,7 @@ O projeto é dividido em várias classes para organizar os diferentes aspectos d
 - **PaymentType.java**: Controla os tipos de pagamento aceitos.
 - **PurchaseRequest.java**: Gerencia pedidos de compra de produtos aos fornecedores.
 - **Address.java**: Classe que gerencia os endereços dos clientes e fornecedores.
+- **ProductToOperate.java**: Classe-auxiliar para outras classes operarem as quantidade dos produtos.
 
 ## Como Rodar o Projeto
 
@@ -64,4 +65,12 @@ O projeto é dividido em várias classes para organizar os diferentes aspectos d
 
 4. **Execute o projeto:**
 
-- O projeto principal pode ser executado diretamente da IDE. Você pode criar um ponto de entrada em uma classe Main.java se ainda não existir. Exemplo:
+- O projeto principal pode ser executado diretamente da IDE. Você pode criar um ponto de entrada em uma classe Main.java se ainda não existir.
+- Exemplo:
+  ```bash
+  public class Main {
+    public static void main(String[] args) {
+        System.out.println("Bem-vindo ao Sistema de Estoque!");
+        // Aqui você pode instanciar objetos e testar o sistema
+    }
+  }
