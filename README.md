@@ -73,4 +73,4 @@ O projeto é dividido em várias classes para organizar os diferentes aspectos d
         System.out.println("Bem-vindo ao Sistema de Estoque!");
         // Aqui você pode instanciar objetos e testar o sistema
     }
-}
+  }
