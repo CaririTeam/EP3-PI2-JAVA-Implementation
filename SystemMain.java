@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class SystemMain {
     private List<Product> products = new ArrayList<>();
@@ -55,4 +56,36 @@ public class SystemMain {
         ExchangeAndReturn exchangeAndReturn = new ExchangeAndReturn(id, idSale, itens, date, observation, voucher);
         exchangesAndReturns.add(exchangeAndReturn);
     }
+
+    public List<Product> productsList(){
+        return products;
+        }
+        
+    public List<Customer> customersList(){
+        return customers;
+        }
+    
+    public List<Supplier> suppliersList(){
+        return suppliers;
+        }
+    
+    public List<Employee> employeesList(){
+        return employees;
+        }
+    
+    public List<Sale> salesList(){
+        return sales;
+        }
+    
+    public List<PurchaseRequest> purchaseRequestsList(){
+        return purchaseRequests;
+        }
+    
+    public List<ProductReceived> productsReceivedtList(){
+        return productsReceived;
+        }
+    
+    public List<ExchangeAndReturn> ExchangesAndReturnsList(){
+        return exchangesAndReturns;
+        }
 }
